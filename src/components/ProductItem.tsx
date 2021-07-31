@@ -19,6 +19,13 @@ interface ProductItemProps {
 function ProductItemComponent({ product, onAddToWishlist }: ProductItemProps) {
   const [isAddingToWishlist, setIsAddingToWishlist] = useState(false);
 
+  async function showFormattedDate() {
+    // Caso queira buscar uma lib apenas na chamada de uma função, sem precisar que ela recarregue na renderização
+    const {format} = await import('date-fns');
+
+    format();
+  }
+
   return (
     <div>
       {product.title} - <strong>{product.price}</strong>
