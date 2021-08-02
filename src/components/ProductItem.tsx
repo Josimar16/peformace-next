@@ -4,6 +4,7 @@ import { AddProductToWishlistProps } from './AddProductToWishlist';
 
 const AddProductToWishlist = dynamic<AddProductToWishlistProps>(
   () => import('./AddProductToWishlist').then(mod => mod.AddProductToWishlist),
+  // eslint-disable-next-line react/display-name
   { loading: () => <span>Carregando...</span> }
 );
 
